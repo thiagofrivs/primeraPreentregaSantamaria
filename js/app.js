@@ -23,7 +23,6 @@ let centinela = 1;
 while (centinela==1) {
     let opcion;
     let unidades =0;
-    
     opcion=prompt('Elija un numero: \n 1- Procesador AMD 3200g    $30000 \n 2- Memoria Ram 2x8   $15000 \n 3-Monitor Samsung 24"  $40000 \n 4- Teclado T-Dagger Bora   $9000 \n 5 Fuente 500w 80 plus bronce   $5000 \n 6- Terminar')
     opcion=parseInt(opcion)
     switch(opcion){
@@ -33,6 +32,7 @@ while (centinela==1) {
             total+= 30000*unidades
             procesador=unidades+procesador
             console.log("Se suman",unidades," procesadores, el subtotal es: ",total)
+            centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
             break
         case 2:
             unidades =pregunta()
@@ -40,6 +40,7 @@ while (centinela==1) {
             total+= 15000*unidades
             memoria+=unidades
             console.log("Se suman",unidades," memorias, el subtotal es: ",total)
+            centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
             break
         case 3:
             unidades = pregunta()
@@ -47,6 +48,7 @@ while (centinela==1) {
             total += 40000*unidades
             monitor+=unidades
             console.log("Se suman",unidades," monitores, el subtotal es: ",total)
+            centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
             break
         case 4:
             unidades=pregunta()
@@ -54,6 +56,7 @@ while (centinela==1) {
             total+=9000*unidades
             teclado+=unidades
             console.log("Se suman",unidades," teclados, el subtotal es: ",total)
+            centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
             break
         case 5:
             unidades=pregunta()
@@ -61,9 +64,15 @@ while (centinela==1) {
             total+=5000*unidades
             fuente+=unidades
             console.log("Se suman",unidades," fuentes, el subtotal es: ",total)
+            centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
             break
+        case 6:
+            centinela=2
+            break
+        default:
+            alert("Ingrese un número válido por favor.")
+            centinela=1
     }
-    centinela=prompt("Desea elegir más productos? \n 1- SI \n 2- NO ")
 }
 total=parseInt(total)
 alert("Usted ha seleccionado "+ procesador+ " procesadores, "+ memoria+ " memorias, "+monitor+ " monitores, "+ teclado+ " teclados y "+fuente+" fuentes. \nEn total suman $"+total)
